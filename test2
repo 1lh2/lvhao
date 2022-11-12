@@ -1,0 +1,167 @@
+#include "pch.h"
+#include "CppUnitTest.h"
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+namespace UnitTest1
+{
+	TEST_CLASS(UnitTest1)
+	{
+	public:
+		
+		TEST_METHOD(TestMethod1)
+		{
+			char c = '*';
+			float a=1.5, b=7.5;
+			float res,t=11.25;
+			if (c == '*')
+			{
+				res = a * b;
+				Assert::AreEqual(t, res);
+			}
+			else if (c == '/') //除数为0是不被允许的,这里当除数为时当1处理，防止程序崩溃;
+			{
+				if (b == 0)
+				{
+					res = a;
+				}
+				else
+				{
+					res = 1.0 * a / b;
+				}
+			}
+			else if (c == '+')
+			{
+				res = a + b;
+			}
+			else if (c == '-')
+			{
+				res = a - b;
+			}
+			else
+			{
+				printf("computer error having excepted opr");
+			}
+			
+		}
+	};
+	TEST_CLASS(UnitTest2)
+	{
+	public:
+
+		TEST_METHOD(TestMethod1)
+		{
+			char c = '/';
+			float a = 1.5, b = 7.5;
+			float res,t=0.2;
+			if (c == '*')
+			{
+				res = a * b;
+			}
+			else if (c == '/') //除数为0是不被允许的,这里当除数为时当1处理，防止程序崩溃;
+			{
+				if (b == 0)
+				{
+					res = a;
+					Assert::AreEqual(t, res);
+				}
+				else
+				{
+					res = 1.0 * a / b;
+				}
+			}
+			else if (c == '+')
+			{
+				res = a + b;
+			}
+			else if (c == '-')
+			{
+				res = a - b;
+			}
+			else
+			{
+				printf("computer error having excepted opr");
+			}
+			
+		}
+	};
+	TEST_CLASS(UnitTest3)
+	{
+	public:
+
+		TEST_METHOD(TestMethod1)
+		{
+			char c = '+';
+			float a = 1.5, b = 7.5;
+			float res,t= 9;
+			if (c == '*')
+			{
+				res = a * b;
+			}
+			else if (c == '/') //除数为0是不被允许的,这里当除数为时当1处理，防止程序崩溃;
+			{
+				if (b == 0)
+				{
+					res = a;
+				}
+				else
+				{
+					res = 1.0 * a / b;
+				}
+			}
+			else if (c == '+')
+			{
+				res = a + b;
+				Assert::AreEqual(t, res);
+			}
+			else if (c == '-')
+			{
+				res = a - b;
+			}
+			else
+			{
+				printf("computer error having excepted opr");
+			}
+			
+		}
+	};
+	TEST_CLASS(UnitTest4)
+	{
+	public:
+
+		TEST_METHOD(TestMethod1)
+		{
+			char c = '-';
+			float a = 1.5, b = 7.5;
+			float res,t=-6;
+			if (c == '*')
+			{
+				res = a * b;
+			}
+			else if (c == '/') //除数为0是不被允许的,这里当除数为时当1处理，防止程序崩溃;
+			{
+				if (b == 0)
+				{
+					res = a;
+				}
+				else
+				{
+					res = 1.0 * a / b;
+				}
+			}
+			else if (c == '+')
+			{
+				res = a + b;
+			}
+			else if (c == '-')
+			{
+				res = a - b;
+				Assert::AreEqual(t, res);
+			}
+			else
+			{
+				printf("computer error having excepted opr");
+			}
+		}
+	};
+}
